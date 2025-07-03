@@ -1,60 +1,71 @@
 #include <stdio.h>
 
+    void movTorre(int torre) { //Recursivo para a peça Torre, com base definida para, ao decrementar, o loop parar quando casa > 0 deixar de ser verdadeiro;
+        if (torre > 0) {
+            printf ("Direita\n");
+            movTorre (torre - 1);
+        }
+    }
+    void movBispo(int bispo) {
+        int i = 0; //Define o valor da inteira i
+        while (i < bispo) {
+            printf("Cima\n");
+
+        int j = 0;   //
+        while (j < 1) {
+            printf("Esquerda\n");
+            j++;
+        }
+
+        i++;
+        }
+    }
+
+
+    void movRainha (int rainha) { //Define que SE o valor de rainha for  maior que 0, o loop fará impressa até que o valor decremente para 1. Após atingir 0, ele encerra
+                if (rainha > 0) {
+                    printf ("Esquerda\n");
+                    movRainha (rainha - 1);
+                }
+            }
+
+
     int main (){
 
-        int Torre, Bispo, Rainha, Cavalo;
+        int Cavalo;
 
-            //Inicio do xadrez
-            printf ("Bem vindo ao xadrez!\n");
+        //Inicio do xadrez
+        printf ("Bem vindo ao xadrez!\n");
 
-                //Peças
+            //Peças
 
-                printf ("Torre\n");
+            printf ("Torre\n");
+                movTorre(5); //Recursividade = Puxa a função Torre
 
-                    Torre = 1;
+        printf ("\n");
 
-                    do { 
-                        printf ("Direita\n"); //Imprime a direita na posição (Inserido 1) ao iniciar o Loop
-                        Torre++; //Incrementa o valor de Torre a cada reinicio do Loop.
+            printf ("Bispo\n");
+                movBispo(5);  //Recursividade = Puxa a função Bispo
 
-                    } while (Torre <= 5 ); //Enquanto Torre for menor ou igual a 5, o Loop reinicia incrementando seu valor. Para ao atingir 5.
+        printf ("\n");
 
-                
-                printf ("Bispo\n");
-        
-                    for (Bispo = 1; Bispo <= 5; Bispo++){ //Definido que a peça Bispo se encontra na posição 1. Condição indica que Bispo movimentará até atingir 5
-                        printf ("Cima\n");
-                        printf ("Direita\n"); /*O loop inicia com o Bispo na posição = 1, imprime Cima e Direita, e por fim incrementa, atualizando sua posição,
-                                                considerando agora = 2. Segue até atingir a posição 5*/
-                    }
-
-                
-                printf ("Rainha\n");
+            printf ("Rainha\n");
+                movRainha(8);  //Recursividade = Puxa a função Rainha
                     
-                    Rainha = 1; //Define a posição da Rainha para = 1
-            
-                    while (Rainha <= 8) //Enquanto a Rainha ocupar uma posição igual ou menor a 8, o Loop roda incrementando em 1, sua posição
-                    {
-                        printf ("Esquerda\n"); //Imprime a direção do movimento
-                        
-                        Rainha++; //incremento da posição da rainha
-                    }
+        printf ("\n");
 
-
-            printf ("\n");
-
-                printf ("Cavalo\n");
+            printf ("Cavalo\n");
                     
-                    for (Cavalo = 1; Cavalo <= 2; Cavalo++) //Inicializa Cavalo = 1 e inicia o Loop definindo o limite em 2. Ao reiniciar o Loop, incrementa variavel
-                    {
-                        printf ("Baixo\n"); //Imprime a posição do Cavalo
+                for (Cavalo = 1; Cavalo <= 2 ; Cavalo++) //Inicializa Cavalo = 1 e inicia o Loop definindo o limite em 2. Ao reiniciar o Loop, incrementa variavel
+                {
+                    printf ("Cima\n"); //Imprime a posição do Cavalo
 
-                        while (Cavalo == 2) //Cavalo = 1 nao ativa a condição. Reinicia o loop. Cavalo = 2 ativa
-                        {
-                            printf ("Esquerda\n"); //Imprime o movimento do cavalo
+                    while (Cavalo == 2) //Cavalo = 1 nao ativa a condição. Reinicia o loop. Cavalo = 2 ativa
+                    {
+                            printf ("Direita\n"); //Imprime o movimento do cavalo
                             Cavalo++; //Incrementa para Cavalo = 3 e encerra o Loop For, pois "Cavalo <= 2".
-                        }
                     }
+                }
 
         return 0;
 
